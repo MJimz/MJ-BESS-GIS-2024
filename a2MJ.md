@@ -35,8 +35,8 @@ GDAL command:
 gdalwarp -overwrite -of GTiff -cutline "C:/Users/localuser/Documents/GIS data/sg_province.gpkg" -cl prov_cyl_recintos -crop_to_cutline "C:/Users/localuser/Documents/GIS data/worldclim_Data/spainwc2.1_30s_bio_1.tif" "C:/Users/localuser/Documents/GIS data/SG clipped by mask layer.tif"
 GDAL command output:
 Creating output file that is 181P x 114L.
- Using internal nodata values (e.g. -3.4e+38) for image C:/Users/localuser/Documents/GIS data/worldclim_Data/spainwc2.1_30s_bio_1.tif.
- Copying nodata values from source C:/Users/localuser/Documents/GIS data/worldclim_Data/spainwc2.1_30s_bio_1.tif to destination C:/Users/localuser/Documents/GIS data/SG clipped by mask layer.tif.
+Using internal nodata values (e.g. -3.4e+38) for image C:/Users/localuser/Documents/GIS data/worldclim_Data/spainwc2.1_30s_bio_1.tif.
+Copying nodata values from source C:/Users/localuser/Documents/GIS data/worldclim_Data/spainwc2.1_30s_bio_1.tif to destination C:/Users/localuser/Documents/GIS data/SG clipped by mask layer.tif.
  Processing C:/Users/localuser/Documents/GIS data/worldclim_Data/spainwc2.1_30s_bio_1.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done.
 Process completed successfully
 Execution completed in 0.27 seconds
@@ -61,9 +61,8 @@ Results:
 
 
 ### Materia forestal de producción 
-``Input parameters:
+```Input parameters:
 { 'INPUT' : '/vsizip/C:\\Users\\localuser\\Downloads\\am.especies_cyl_mfr.zip/am.especies_cyl_mfr.shp|layername=am.especies_cyl_mfr', 'MASK' : 'C:/Users/localuser/Documents/GIS data/sg_province.gpkg|layername=prov_cyl_recintos', 'OPTIONS' : '', 'OUTPUT' : 'C:/Users/localuser/Documents/GIS data/prod_forestal_sego.gpkg' }
-
 GDAL command:
 ogr2ogr -clipsrc "C:/Users/localuser/Documents/GIS data/sg_province.gpkg" -clipsrclayer prov_cyl_recintos "C:/Users/localuser/Documents/GIS data/prod_forestal_sego.gpkg" /vsizip/C:\Users\localuser\Downloads\am.especies_cyl_mfr.zip/am.especies_cyl_mfr.shp am.especies_cyl_mfr -f "GPKG"
 GDAL command output:
@@ -72,21 +71,18 @@ Process completed successfully
 Execution completed in 0.96 seconds
 Results:
 {'OUTPUT': 'C:/Users/localuser/Documents/GIS data/prod_forestal_sego.gpkg'}
-
 Loading resulting layers
 Algorithm 'Clip vector by mask layer' finished```
 
 ## Buffers
 ### Select within distance → biopoints and rivers
-``` processing.run("native:selectwithindistance", {'INPUT':'C:/Users/localuser/Documents/GIS data/SG_bio_clip_V.gpkg','REFERENCE':'sego_rivers.gpkg|layername=clipped_mask','DISTANCE':10,'METHOD':0})```
+```processing.run("native:selectwithindistance", {'INPUT':'C:/Users/localuser/Documents/GIS data/SG_bio_clip_V.gpkg','REFERENCE':'sego_rivers.gpkg|layername=clipped_mask','DISTANCE':10,'METHOD':0})```
 
 ### Buffer → cattle trails
 ```Input parameters:
 { 'DISSOLVE' : False, 'DISTANCE' : 10, 'END_CAP_STYLE' : 0, 'INPUT' : 'C:/Users/localuser/Documents/GIS data/vias_pecuarias_sego.gpkg', 'JOIN_STYLE' : 0, 'MITER_LIMIT' : 2, 'OUTPUT' : 'TEMPORARY_OUTPUT', 'SEGMENTS' : 5, 'SEPARATE_DISJOINT' : False }
-
 Execution completed in 0.36 seconds
 Results:
 {'OUTPUT': 'Buffered_7c7ddb58_0111_4825_9ecf_2e7f5db5f5cd'}
-
 Loading resulting layers
 Algorithm 'Buffer' finished```
