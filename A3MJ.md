@@ -2,7 +2,8 @@
 ## Layers used 
 | Layer name | Source | Type | Relevance | 
 |---|---|---|---|
-| 
+| Spanish ministry grid for species occurrences | [Downloadable shapefile: MITECO](https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/biodiversidad/especies-art17-2013_2018.html) | `.shp | Grid containing | 
+
 ## Tools used 
 | Tool | Explanation | Processing history | 
 |---|---|---|
